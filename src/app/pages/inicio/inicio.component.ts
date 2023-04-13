@@ -6,8 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./inicio.component.css']
 })
 export class InicioComponent {
-nombre = "Japson"
-apellido = "Moreira"
+nombre = "Japson";
+apellido = "Moreira";
+loadingVisible = false;
+
+visualizarLoading(){
+  this.loadingVisible = true;
+  setTimeout(() => {
+    this.loadingVisible = false;
+  }, 2000);
+}
+
+
 }
 
 
