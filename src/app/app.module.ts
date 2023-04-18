@@ -6,8 +6,10 @@ import { AppComponent } from './app.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { ButtonModule } from 'primeng/button';
+import { TableModule } from 'primeng/table';
 import {AppRoutingModule} from './app-routing.module';
 import { PaginaTablaComponent } from './pages/pagina-tabla/pagina-tabla.component'
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { PaginaTablaComponent } from './pages/pagina-tabla/pagina-tabla.componen
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ButtonModule
+    ButtonModule,
+    TableModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
