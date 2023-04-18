@@ -10,6 +10,8 @@ import { TableModule } from 'primeng/table';
 import {AppRoutingModule} from './app-routing.module';
 import { PaginaTablaComponent } from './pages/pagina-tabla/pagina-tabla.component'
 import { HttpClientModule } from '@angular/common/http';
+import { PanelModule } from 'primeng/panel';
+import { TabMenuModule } from 'primeng/tabmenu';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     ButtonModule,
     TableModule,
-    HttpClientModule
+    HttpClientModule,
+    PanelModule,
+    TabMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
