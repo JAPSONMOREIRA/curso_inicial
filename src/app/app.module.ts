@@ -16,6 +16,8 @@ import { MenubarModule } from 'primeng/menubar';
 import { MenuHeaderComponent } from './components/menu-header/menu-header.component';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
+import { ReactiveFormsModule } from '@angular/forms';
+import { InputTextModule } from 'primeng/inputtext';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { MessageService } from 'primeng/api';
     PanelModule,
     TabMenuModule,
     MenubarModule,
-    ToastModule
+    ToastModule,
+    ReactiveFormsModule,
+    InputTextModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

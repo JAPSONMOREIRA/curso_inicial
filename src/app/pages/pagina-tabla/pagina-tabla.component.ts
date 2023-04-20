@@ -14,6 +14,7 @@ export class PaginaTablaComponent implements  OnInit{
 
   listEmpleado: IDataEmpleado[] = [];
   columnTabla: any;
+  loading = false;
 
   constructor(private ruta: Router, 
               private empleadoService: EmpleadoService,
@@ -23,17 +24,19 @@ export class PaginaTablaComponent implements  OnInit{
   ngOnInit(): void {
     console.log('hola estoy aqui')
     this.iniColumnaTabla();
-    
+    this.loading=true;
     this.empleadoService.getAllEmployee().subscribe(
       {
         next: (datos) =>{
           console.log(datos)
           this.listEmpleado = datos.data;
+          this.loading=false;
           this.mensaje.add({ severity: 'success', summary: 'Satisfactorio', detail: 'Exito' });
 
         },
         error: (err)=>{
           console.log('ERROR')
+          this.loading=false;
           this.mensaje.add({ severity: 'error', summary: 'Error', detail: 'Ocurrió un problema' });
 
         }

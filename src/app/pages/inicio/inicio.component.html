@@ -1,18 +1,34 @@
-<app-menu-header></app-menu-header>
+<p-toast></p-toast>
+<div class="m-6">
 <h1>{{nombre + apellido}}</h1>
-<app-loading [visible]="loadingVisible"></app-loading>
 
+<p-panel header="Formulario Reactivo">
+    <form  [formGroup]="formUsuario" class="formgrid grid">
+    
+            <div class="field col-12 md:col-6">
+                <label for="name">Nombre</label>
+                <input id="name" type="text" pInputText formControlName="nombre"
+                         class="text-base text-color surface-overlay p-2 
+                         border-1 border-solid surface-border border-round
+                          appearance-none outline-none focus:border-primary w-full">
+            </div>
 
+            <div class="field col-12 md:col-6">
+                <label for="apellido">Apellido</label>
+                <input id="apellido" type="text" pInputText formControlName="apellido"
+                        class="text-base text-color surface-overlay 
+                        p-2 border-1 border-solid surface-border 
+                        border-round appearance-none outline-none 
+                        focus:border-primary w-full">
+            </div>
 
-<div class="grid">
-    <div class="col-6">
-        <p-button label="Ver loading" (onClick)="visualizarLoading()"></p-button>
-    </div>
-
-    <div class="col-6">
-        <p-button label="Ir Tabla" icon="pi pi-save" iconPos="right" (onClick)="irPaginaTabla()"></p-button>
-    </div>
+            <p-button (onClick)="verificar()"> Verificar</p-button>
+    </form>
+    
+</p-panel>
 </div>
+
+
 
 
 
