@@ -1,8 +1,6 @@
-<h1>Regresar a inicio</h1>
-
-<p-tabMenu [model]="listMenu" [activeItem]="activeItem"></p-tabMenu>
-
-<div class="card">
+<app-menu-header></app-menu-header>
+<p-toast></p-toast>
+<div class="card m4">
     <div class="flex justify-content-center  flex-wrap card-container">
         <p-panel header="Lista de Empleados">
             <p-table [columns]="columnTabla" [value]="listEmpleado" [tableStyle]="{ 'min-width': '50rem' }"
