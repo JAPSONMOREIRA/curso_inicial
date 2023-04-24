@@ -7,23 +7,37 @@
     
             <div class="field col-12 md:col-6">
                 <label for="name">Nombre</label>
-                <input id="name" type="text" pInputText formControlName="nombre"
+                <input id="name" type="text" pInputText formControlName="name"
                          class="text-base text-color surface-overlay p-2 
-                         border-1 border-solid surface-border border-round
-                          appearance-none outline-none focus:border-primary w-full">
+                         border-1 border-solid border-round
+                          appearance-none outline-none focus:border-primary w-full"/>
+                        <div *ngIf="(formUsuario.get('name')!.dirty || formUsuario.get('name')!.touched )">
+                            <small *ngIf="formUsuario.get('name')!.hasError('required')" id="name" class="p-error">Nombre es requerido.</small>
+                       </div>
+                
             </div>
-
+            
+           
             <div class="field col-12 md:col-6">
                 <label for="apellido">Apellido</label>
                 <input id="apellido" type="text" pInputText formControlName="apellido"
                         class="text-base text-color surface-overlay 
-                        p-2 border-1 border-solid surface-border 
+                        p-2 border-1 border-solid 
                         border-round appearance-none outline-none 
-                        focus:border-primary w-full">
-            </div>
+                        focus:border-primary w-full"/>
 
+                        <div *ngIf="(formUsuario.get('apellido')!.dirty || formUsuario.get('apellido')!.touched )">
+                            <small *ngIf="formUsuario.get('apellido')!.hasError('required')" id="apellido" class="p-error">Apellido es requerido.</small>
+                        </div>
+                
+            </div>
+            
+            
             <p-button (onClick)="verificar()"> Verificar</p-button>
     </form>
+
+    {{formUsuario.value | json}}
+    {{formUsuario.get('nombre ')!.hasError('required')}}
     
 </p-panel>
 </div>
